@@ -1,14 +1,16 @@
 import React from "react";
 
-const OwnerCard = () => {
-return(<div className="ownerCard">
-      <div className="ownercard-content">
-        <h3>
-          Name: <span className="ownercard-name">Mollz</span>
-        </h3>
-        <p>Life long learner and animal lover opens kennel for cats and dogs</p>
+const OwnerCard = props => {
+  return (
+    <div className="card">
+      <div className="card-content">
+        <h3>Name: <span className="card-ownername">
+          {props.owner.name}
+        </span></h3>
+        <p>Pet: {props.owner.pet}</p>
       </div>
     </div>
-)}
+  );
+}
 
     export default OwnerCard

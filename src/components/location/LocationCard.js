@@ -1,17 +1,15 @@
 import React from "react";
 
-const LocationCard = () => {
-    return (
-        <div className="locCard">
-        <div className="locCard-content">
-          <h3>
-     <span className="card-locname">Student Kennels Nashville North</span>
-          </h3>
-          <h3><span className="card-locname2">Student Kennels Nashville South</span>
-          </h3>
-          
-        </div>
+const LocationCard = props => {
+  return (
+    <div className="card">
+      <div className="card-content">
+        <h3>Name: <span className="card-locationname">
+          {props.location.name}
+        </span></h3>
+        <p>Address: {props.location.address}</p>
       </div>
-    )
+    </div>
+  );
 }
 export default LocationCard
