@@ -8,6 +8,7 @@ const EmployeeCard = props => {
           {props.employee.name}
         </span></h3>
         <p>Title: {props.employee.title}</p>
+        <button type="button" onClick={() => props.deleteEmployee(props.employee.id)}>Fire</button>
       </div>
     </div>
   );
