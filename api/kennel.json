@@ -1,90 +1,85 @@
 {
-    "animals": [
-        {
-            "id": 1,
-            "name": "Doodles",
-            "breed": "Poodle"
-        },
-        {
-            "id": 2,
-            "name": "Decker",
-            "breed": "German Shepherd"
-        },
-        {
-            "id": 3,
-            "name": "Esme",
-            "breed": "Pitbull"
-        },
-        {
-            "id": 4,
-            "name": "Bill",
-            "breed": "TabbyCat"
-        }
-    ],
-    "employees": [
-        {
-            "id": 1,
-            "name": "Mollz",
-            "title": "Board Member"
-        },
-        {
-            "id": 2,
-            "name": "Aja",
-            "title": "Board Member"
-        },
-        {
-            "id": 3,
-            "name": "Syd",
-            "title": "Board Member"
-        },
-        {
-            "id": 4,
-            "name": "Christina",
-            "title": "Board Member"
-        }
-    ],
-    "locations": [
-        {
-            "id": 1,
-            "name": "Nashville North",
-            "address": "123 N 1st St"
-        },
-        {
-            "id": 2,
-            "name": "Nashville South",
-            "address": "123 S 1st St"
-        },
-        {
-            "id": 3,
-            "name": "Nashville East",
-            "address": "123 E 1st St"
-        },
-        {
-            "id": 4,
-            "name": "Nashville West",
-            "address": "123 W 1st St"
-        }
-    ],
-    "owners": [
-        {
-            "id": 1,
-            "name": "Mo",
-            "pet": "Bill"
-        },
-        {
-            "id": 2,
-            "name": "Lissa",
-            "pet": "Esme"
-        },
-        {
-            "id": 3,
-            "name": "Loren",
-            "pet": "Decker"
-        },
-        {
-            "id": 4,
-            "name": "Rein",
-            "pet": "Doodles"
-        }
-    ]
+  "animals": [
+    {
+      "id": 1,
+      "name": "Doodles",
+      "breed": "Poodle"
+    },
+    {
+      "id": 3,
+      "name": "Esme",
+      "breed": "Pitbull"
+    },
+    {
+      "id": 4,
+      "name": "Bill",
+      "breed": "TabbyCat"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Mollz",
+      "title": "Board Member"
+    },
+    {
+      "id": 2,
+      "name": "Aja",
+      "title": "Board Member"
+    },
+    {
+      "id": 3,
+      "name": "Syd",
+      "title": "Board Member"
+    },
+    {
+      "id": 4,
+      "name": "Christina",
+      "title": "Board Member"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Nashville North",
+      "address": "123 N 1st St"
+    },
+    {
+      "id": 2,
+      "name": "Nashville South",
+      "address": "123 S 1st St"
+    },
+    {
+      "id": 3,
+      "name": "Nashville East",
+      "address": "123 E 1st St"
+    },
+    {
+      "id": 4,
+      "name": "Nashville West",
+      "address": "123 W 1st St"
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Mo",
+      "pet": "Bill"
+    },
+    {
+      "id": 2,
+      "name": "Lissa",
+      "pet": "Esme"
+    },
+    {
+      "id": 3,
+      "name": "Loren",
+      "pet": "Decker"
+    },
+    {
+      "id": 4,
+      "name": "Rein",
+      "pet": "Doodles"
+    }
+  ]
 }
