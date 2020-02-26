@@ -7,7 +7,7 @@ import LocationManager from '../../modules/LocationManager'
 const LocationList = () => {
     const [locations, setLocations] = useState([]);
     const getLocations = () => {
-
+      
         return LocationManager.getAll().then(locationsFromAPI => {
             setLocations(locationsFromAPI)
         });
