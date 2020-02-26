@@ -23,10 +23,17 @@ const ApplicationViews = () => {
         render={(props) => {
           return <AnimalList />
         }} />
-      <Route path="/animals/:animalId(\d+)" render={(props) => {
-        // Pass the animalId to the AnimalDetailComponent
-        return <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
-      }} />
+    <Route
+  path="/animals/:animalId(\d+)"
+  render={props => {
+    return (
+      <AnimalDetail
+        animalId={parseInt(props.match.params.animalId)}
+        {...props}
+      />
+    );
+  }}
+/>
       <Route
         path="/employees"
         render={props => {
@@ -42,7 +49,8 @@ const ApplicationViews = () => {
       />
       <Route path="/location/:locationId(\d+)"
         render={(props) => {
-          return <LocationDetail locationId={parseInt(props.match.params.locationId)} />
+          return <LocationDetail locationId={parseInt(props.match.params.locationId)}
+          {...props} />
         }} />
       <Route
         path="/owners"
