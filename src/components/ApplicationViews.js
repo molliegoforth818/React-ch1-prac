@@ -7,7 +7,8 @@ import EmployeeList from "./employee/EmployeeList";
 import OwnerList from "./owner/OwnerList";
 import AnimalDetail from "./animal/AnimalDetail"
 import LocationDetail from "./location/LocationDetail"
-import AnimalForm
+import AnimalForm from './animal/AnimalForm'
+import LocationForm from './location/LocationForm'
 
 const ApplicationViews = () => {
   return (
@@ -22,20 +23,20 @@ const ApplicationViews = () => {
       <Route exact path="/animals" render={(props) => {
         return <AnimalList {...props} />
       }} />
-    <Route
-  path="/animals/:animalId(\d+)"
-  render={props => {
-    return (
-      <AnimalDetail
-        animalId={parseInt(props.match.params.animalId)}
-        {...props}
+      <Route
+        path="/animals/:animalId(\d+)"
+        render={props => {
+          return (
+            <AnimalDetail
+              animalId={parseInt(props.match.params.animalId)}
+              {...props}
+            />
+          );
+        }}
       />
-    );
-  }}
-/>
-<Route path="/animals/new" render={(props) => {
-  return <AnimalForm {...props} />
-}} />
+      <Route path="/animals/new" render={(props) => {
+        return <AnimalForm {...props} />
+      }} />
       <Route
         path="/employees"
         render={props => {
@@ -46,17 +47,22 @@ const ApplicationViews = () => {
       <Route
         exact path="/locations"
         render={props => {
-          return <LocationList />;
+          return <LocationList {...props} />;
         }}
       />
       <Route path="/location/:locationId(\d+)"
         render={(props) => {
           return <LocationDetail locationId={parseInt(props.match.params.locationId)}
-          {...props} />
-        }} />
+            {...props} />
+        }}
+      />
+ <Route path="/location/new" render={(props) => {
+        return <LocationForm {...props} />;
+      }}
+       />
       <Route
         path="/owners"
-        render={props => {
+        render={(props) => {
           return <OwnerList />;
         }}
       />
