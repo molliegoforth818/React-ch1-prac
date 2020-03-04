@@ -11,8 +11,9 @@ import AnimalForm from './animal/AnimalForm'
 import LocationForm from './location/LocationForm'
 import OwnerForm from './owner/OwnerForm'
 import EmployeeForm from './employee/EmployeeForm'
+import AnimalEditForm from './animal/AnimalEditForm'
 
-
+const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 const ApplicationViews = () => {
   return (
     <React.Fragment>
@@ -23,11 +24,19 @@ const ApplicationViews = () => {
           return <Home />;
         }}
       />
+      <Route path="/login" component={Login} />
       <Route exact path="/animals" render={(props) => {
         return <AnimalList {...props} />
       }} />
+      <Route path="/animals/:animalId(\d+)/edit" render={props => {
+  if (isAuthenticated()) {
+    return <AnimalEditForm {...props} />
+  } else {
+    return <Redirect to="/login" />
+  }
+}} />
       <Route
-        path="/animals/:animalId(\d+)"
+        exact path="/animals/:animalId(\d+)"
         render={props => {
           return (
             <AnimalDetail
