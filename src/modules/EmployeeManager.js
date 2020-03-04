@@ -13,7 +13,7 @@ export default {
     }).then(result => result.json())
   },
   post(newEmployee) {
-    return fetch(`${remoteURL}/employee`, {
+    return fetch(`${remoteURL}/employees`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

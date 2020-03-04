@@ -4,7 +4,7 @@ import EmployeeCard from './EmployeeCard';
 import EmployeeManager from '../../modules/EmployeeManager'
 
 
-const EmployeeList = () => {
+const EmployeeList = (props) => {
     const [employees, setEmployees] = useState([]);
     const getEmployees = () => {
 
@@ -20,6 +20,14 @@ const EmployeeList = () => {
           .then(() => EmployeeManager.getAll().then(setEmployees));
       }
     return (
+        <React.Fragment>
+       <section className="section-content">
+  <button type="button"
+      className="btn"
+      onClick={() => {props.history.push("/employee/new")}}>
+      New Employee
+  </button>
+</section>
         <div className="container-cards">
             {employees.map(employee =>
                 <EmployeeCard 
@@ -28,6 +36,7 @@ const EmployeeList = () => {
                 deleteEmployee={deleteEmployee} />
             )}
         </div>
+        </React.Fragment>
     );
 };
 export default EmployeeList

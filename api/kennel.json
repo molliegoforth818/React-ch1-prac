@@ -28,11 +28,6 @@
   ],
   "employees": [
     {
-      "id": 1,
-      "name": "Mollz",
-      "title": "Board Member"
-    },
-    {
       "id": 2,
       "name": "Aja",
       "title": "Board Member"
@@ -46,6 +41,11 @@
       "id": 4,
       "name": "Christina",
       "title": "Board Member"
+    },
+    {
+      "name": "mollz",
+      "title": "board member",
+      "id": 5
     }
   ],
   "locations": [
