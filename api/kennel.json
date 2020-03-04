@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Doodles",
-      "breed": "Poodle"
+      "breed": "poodle"
     },
     {
       "id": 2,
@@ -19,11 +19,6 @@
       "id": 4,
       "name": "Bill",
       "breed": "TabbyCat"
-    },
-    {
-      "name": "Bill ",
-      "breed": "Cat",
-      "id": 5
     }
   ],
   "employees": [

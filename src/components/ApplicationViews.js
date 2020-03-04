@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
 import AnimalList from "./animal/AnimalList"
@@ -12,11 +12,13 @@ import LocationForm from './location/LocationForm'
 import OwnerForm from './owner/OwnerForm'
 import EmployeeForm from './employee/EmployeeForm'
 import AnimalEditForm from './animal/AnimalEditForm'
+import Login from './auth/Login'
 
 const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 const ApplicationViews = () => {
   return (
     <React.Fragment>
+      <Route path="/login" component={Login} />
       <Route
         exact
         path="/"
@@ -24,13 +26,14 @@ const ApplicationViews = () => {
           return <Home />;
         }}
       />
-      <Route path="/login" component={Login} />
-      <Route exact path="/animals" render={(props) => {
-        return <AnimalList {...props} />
-      }} />
       <Route path="/animals/:animalId(\d+)/edit" render={props => {
   if (isAuthenticated()) {
     return <AnimalEditForm {...props} />
+  }
+}} />
+     <Route exact path="/animals" render={props => {
+  if (isAuthenticated()) {
+    return <AnimalList {...props} />
   } else {
     return <Redirect to="/login" />
   }
@@ -49,24 +52,26 @@ const ApplicationViews = () => {
       <Route path="/animals/new" render={(props) => {
         return <AnimalForm {...props} />
       }} />
-      <Route
-        exact path="/employees"
-        render={props => {
-          return <EmployeeList {...props} />;
-        }}
-      />
+      <Route exact path="/employees" render={props => {
+  if (isAuthenticated()) {
+    return <EmployeeList {...props} />
+  } else {
+    return <Redirect to="/login" />
+  }
+}} />
       <Route
         exact path="/employee/new"
         render={props => {
           return <EmployeeForm {...props} />;
         }}
       />
-      <Route
-        exact path="/locations"
-        render={props => {
-          return <LocationList {...props} />;
-        }}
-      />
+     <Route exact path="/locations" render={props => {
+  if (isAuthenticated()) {
+    return <LocationList {...props} />
+  } else {
+    return <Redirect to="/login" />
+  }
+}} />
       <Route path="/location/:locationId(\d+)"
         render={(props) => {
           return <LocationDetail locationId={parseInt(props.match.params.locationId)}
@@ -77,17 +82,19 @@ const ApplicationViews = () => {
         return <LocationForm {...props} />;
       }}
       />
-      <Route
-        path="/owners"
-        render={(props) => {
-          return <OwnerList {...props} />;
-        }}
-      />
+      <Route exact path="/owners" render={props => {
+  if (isAuthenticated()) {
+    return <OwnerList {...props} />
+  } else {
+    return <Redirect to="/login" />
+  }
+}} />
       <Route path="/owner/new" render={(props) => {
         return <OwnerForm {...props} />
       }} />
+
     </React.Fragment>
   );
-};
+}
 
-export default ApplicationViews;
+export default ApplicationViews
