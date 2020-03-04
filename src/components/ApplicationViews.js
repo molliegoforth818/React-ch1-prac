@@ -13,6 +13,8 @@ import OwnerForm from './owner/OwnerForm'
 import EmployeeForm from './employee/EmployeeForm'
 import AnimalEditForm from './animal/AnimalEditForm'
 import Login from './auth/Login'
+import EmployeeEditForm from "./employee/EmployeeEditForm"
+import LocationEditForm from "./location/LocationEditForm";
 
 const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 const ApplicationViews = () => {
@@ -52,6 +54,11 @@ const ApplicationViews = () => {
       <Route path="/animals/new" render={(props) => {
         return <AnimalForm {...props} />
       }} />
+      <Route path="/employee/:employeeId(\d+)/edit" render={(props)=>{
+        if (isAuthenticated()){
+          return <EmployeeEditForm {...props}/>
+        }
+      }}/>
       <Route exact path="/employees" render={props => {
   if (isAuthenticated()) {
     return <EmployeeList {...props} />
@@ -65,6 +72,11 @@ const ApplicationViews = () => {
           return <EmployeeForm {...props} />;
         }}
       />
+      <Route path="/location/:locationId(\d+)/edit" render={(props)=>{
+        if (isAuthenticated()){
+          return <LocationEditForm {...props}/>
+        }
+      }}/>
      <Route exact path="/locations" render={props => {
   if (isAuthenticated()) {
     return <LocationList {...props} />
@@ -72,13 +84,13 @@ const ApplicationViews = () => {
     return <Redirect to="/login" />
   }
 }} />
-      <Route path="/location/:locationId(\d+)"
+      <Route exact path="/location/:locationId(\d+)"
         render={(props) => {
           return <LocationDetail locationId={parseInt(props.match.params.locationId)}
             {...props} />
         }}
       />
-      <Route path="/location/new" render={(props) => {
+      <Route path="/locations/new" render={(props) => {
         return <LocationForm {...props} />;
       }}
       />

@@ -31,9 +31,11 @@ const LocationList = (props) => {
     <div className="container-cards">
       {locations.map(location =>
         <LocationCard
-          key={location.id}
-          location={location}
-          deleteLocation={deleteLocation} />)}
+        {...props} 
+        key={location.id}
+        kennelLocation={location}
+          deleteLocation={deleteLocation}
+          />)}
     </div>
     </React.Fragment>
   );

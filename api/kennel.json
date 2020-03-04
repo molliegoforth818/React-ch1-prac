@@ -24,23 +24,23 @@
   "employees": [
     {
       "id": 2,
-      "name": "Aja",
+      "name": "Aja W.",
       "title": "Board Member"
     },
     {
       "id": 3,
-      "name": "Syd",
+      "name": "Syd C.",
       "title": "Board Member"
     },
     {
       "id": 4,
-      "name": "Christina",
+      "name": "Christina A.",
       "title": "Board Member"
     },
     {
-      "name": "mollz",
-      "title": "board member",
-      "id": 5
+      "id": 5,
+      "name": "Mollie G.",
+      "title": "Board Member"
     }
   ],
   "locations": [
