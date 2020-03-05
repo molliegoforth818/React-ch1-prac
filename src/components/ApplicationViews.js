@@ -15,6 +15,7 @@ import AnimalEditForm from './animal/AnimalEditForm'
 import Login from './auth/Login'
 import EmployeeEditForm from "./employee/EmployeeEditForm"
 import LocationEditForm from "./location/LocationEditForm";
+import EmployeeWithAnimals from './employee/EmployeeWithAnimals'
 
 const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 const ApplicationViews = () => {
@@ -72,6 +73,9 @@ const ApplicationViews = () => {
           return <EmployeeForm {...props} />;
         }}
       />
+      <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
+    return <EmployeeWithAnimals {...props} />
+}} />
       <Route path="/location/:locationId(\d+)/edit" render={(props)=>{
         if (isAuthenticated()){
           return <LocationEditForm {...props}/>

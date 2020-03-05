@@ -1,4 +1,4 @@
-import { unstable_batchedUpdates } from "react-dom"
+import { update } from "react-dom"
 
 const remoteURL = "http://localhost:5002"
 

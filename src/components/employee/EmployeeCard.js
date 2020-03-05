@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const EmployeeCard = props => {
   return (
     <div className="card">
@@ -10,6 +11,8 @@ const EmployeeCard = props => {
         <p>Title: {props.employee.title}</p>
         <button type="button" onClick={() => props.deleteEmployee(props.employee.id)}>Fire</button>
         <button type="button" onClick={()=> props.history.push(`/employee/${props.employee.id}/edit`)}>Edit</button>
+        <button type="button"
+        onClick={() => { props.history.push(`/employees/${props.employee.id}/details`) }}>Details</button>
       </div>
     </div>
   );
